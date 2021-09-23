@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-</head>
-<body>
+
+<!-- bring in the template/shell html from base.html -->
+{% extends "base.html" %} 
+<!-- ensures the following is inserted in the block content section -->
+{% block content %}
+    <h2>I'm extending the base template!</h2>
+<!-- Jinja for loop -->
     {% for task in tasks %}
         {{ task.task_name }}<br>
         {{ task.category_name }}<br>
@@ -14,5 +12,6 @@
         {{ task.is_urgent }}<br>
         {{ task.due_date }}<br>
     {% endfor %}
-</body>
-</html>
+
+    <!-- always include and endblock -->
+{% endblock %}
